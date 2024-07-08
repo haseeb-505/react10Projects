@@ -26,8 +26,8 @@ const Navigation2 = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-              <Nav.Link href="#" className={`${styles.NavLink}`}>Home</Nav.Link>
-              <Nav.Link href="#action2" className={`${styles.NavLink}`}>About Us</Nav.Link>
+              <Nav.Link href="/home" className={`${styles.NavLink}`}>Home</Nav.Link>
+              <Nav.Link href="/about" className={`${styles.NavLink}`}>About Us</Nav.Link>
               <NavDropdown title="Features" id="navbarScrollingDropdown" className={`${styles.NavLink}`}>
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
@@ -38,10 +38,10 @@ const Navigation2 = () => {
                   Something else here
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#" className={`${styles.NavLink}`}>
+              <Nav.Link href="/contact" className={`${styles.NavLink}`}>
                 Contact Us
               </Nav.Link>
-              <Nav.Link href="#" className={`${styles.NavLink}`}>
+              <Nav.Link href="/signIn" className={`${styles.NavLink}`}>
                 Sign In
               </Nav.Link>
               {/* <Nav.Link href="#" className={`${styles.NavLink}`}>

@@ -24,7 +24,7 @@ const Time = () => {
     }, []);
   return (
     <div className={`${Styles.live_time}`}>
-      <h4>Islamabda, Pakistan Live Time</h4>
+      <h4>Islamabad, Pakistan Live Time</h4>
       <span>{islamabadTime}</span>
     </div>
   )

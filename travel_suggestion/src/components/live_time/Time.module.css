@@ -3,3 +3,6 @@
     color: white;
     padding-left: 15px;
 }
+.live_time h4, .live_time span{
+    font-size: medium;
+}

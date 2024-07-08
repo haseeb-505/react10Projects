@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import backgroundImage from './images/Faisal_Masjid_From_Damn_e_koh.jpg';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // switch import
 
 import './App.css';
@@ -9,7 +9,9 @@ import './App.css';
 import Navigation2 from './components/Navigation/Navigation2';
 import Social_links from './components/social_links/Social_links';
 import Welcome from './components/welocme_page/Welcome';
-
+import Home from './components/Home_page/Home';
+import About from './components/About_Us/About';
+import Contact from './components/Contact/Contact';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -28,7 +30,18 @@ function App() {
 
   return (
     <div style={appStyle}>
-      <Welcome />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Welcome/>}></Route>
+          <Route path='/home' element={<Home/>}></Route>
+          <Route path='/about' element={<About/>}></Route>
+          <Route path='/contact' element={<Contact/>}></Route>
+          {/* <Route path='/signIn' element={<SignIn/>}></Route> */}
+
+
+        </Routes>
+
+      </BrowserRouter>
     </div>
   )
 }
