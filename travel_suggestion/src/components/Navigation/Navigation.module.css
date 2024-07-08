@@ -1,0 +1,36 @@
+.body{
+    margin: 0px !important;
+    padding: none;
+}
+
+.logo_text{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.homePage_component{
+display: flex;
+color: white;
+}
+
+.link_pages{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 24px;
+    font-size: large;
+    text-decoration: none;
+    color: white; 
+}
+.link_pages_li{
+    color: white;
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: row;
+}
