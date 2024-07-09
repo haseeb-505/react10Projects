@@ -12,6 +12,8 @@ import Welcome from './components/welocme_page/Welcome';
 import Home from './components/Home_page/Home';
 import About from './components/About_Us/About';
 import Contact from './components/Contact/Contact';
+import SignIn from './components/SignInUp/SignIn';
+import SignUp from './components/SignInUp/SignUp';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -36,8 +38,8 @@ function App() {
           <Route path='/home' element={<Home/>}></Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
-          {/* <Route path='/signIn' element={<SignIn/>}></Route> */}
-
+          <Route path='/signIn' element={<SignIn/>}></Route>
+          <Route path='/signUp' element={<SignUp/>}></Route>
 
         </Routes>
 

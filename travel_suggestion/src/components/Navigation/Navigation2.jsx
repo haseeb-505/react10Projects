@@ -51,6 +51,7 @@ const Navigation2 = () => {
           <Form className="d-flex">
             <Form.Control
               type="search"
+              id='search-button'
               placeholder="Search"
               className="me-2"
               aria-label="Search"

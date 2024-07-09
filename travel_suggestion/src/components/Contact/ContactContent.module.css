@@ -1,7 +1,7 @@
 .contact h1{
     color: white;
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 15%;
     font-size: xx-large;
     font-family: 'Times New Roman', Times, serif;
@@ -14,7 +14,7 @@
 .contact p{
     color: white;
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 18%;
     font-size: large;
     font-family: 'Times New Roman', Times, serif;
@@ -27,7 +27,7 @@
     width: 38%;
     height: 80%;
     position: absolute;
-    top: 25%;
+    top: 23%;
     left: 60%;
     margin-bottom: 20px;
     /* padding-bottom: 10px; */
@@ -77,8 +77,8 @@
 .contact_form button {
     width: 20%;
     position: relative;
-    left: 15%;
-    transform: translate(-50%, 90%);
+    left: 17%;
+    transform: translate(-80%, 110%);
     /* top: 100%; */
 }
 
