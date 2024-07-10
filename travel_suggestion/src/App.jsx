@@ -14,6 +14,7 @@ import About from './components/About_Us/About';
 import Contact from './components/Contact/Contact';
 import SignIn from './components/SignInUp/SignIn';
 import SignUp from './components/SignInUp/SignUp';
+import SearchPage from './components/SearchSuggestion/SearchPage';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -40,6 +41,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/signIn' element={<SignIn/>}></Route>
           <Route path='/signUp' element={<SignUp/>}></Route>
+          <Route path="/search" element={<SearchPage/>}></Route>
 
         </Routes>
 

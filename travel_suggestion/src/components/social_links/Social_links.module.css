@@ -1,8 +1,8 @@
 .social_media_links{
-    position: relative;
-    top: 15%;
+    position: absolute;
+    top: 30%;
     left: 2.5%;
-    transform: translate(0%, -15%);
+    /* transform: translate(0%, -15%); */
     /* transform-origin: ; */
     display: flex;
     flex-direction: column;

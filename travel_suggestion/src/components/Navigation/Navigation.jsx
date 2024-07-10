@@ -1,104 +1,84 @@
-import React from 'react'
-import styles from './Navigation.module.css'
-import logo_img from '../../images/travel_logo.jpeg'
-import Social_links from '../social_links/Social_links'
+import React, { useContext } from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Image from 'react-bootstrap/Image';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Form from 'react-bootstrap/Form'; // Import Form
+import Button from 'react-bootstrap/Button'; // Import Button
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import styles from './Navigation2.module.css';
+import logo_img from '../../images/travel_logo.jpeg';
+// import Social_links from '../social_links/Social_links';
+// import Home from '../Home_page/Home';
+import { SearchContext } from '../SearchSuggestion/SearchContext';
 
-const Navigation = () => {
-  // console.log(styles.navigation)
+
+const Navigation2 = () => {
+  const {searchQuery, setSearchQuery } = useContext(SearchContext);
+
+  const handleSearchChange = (event) => {
+    event.preventDefault();
+    const searchValue = document.getElementById('search-button').value;
+    setSearchQuery(searchValue);
+  };
+
   return (
-    <div className={`${styles.body}`}>
-    <nav className='container'>
-      <div className="logo">
-        <img src={logo_img} alt="travel logo" width="50px" height="50px" margin="5px" />
-      </div>
-      <a className={`${styles.logo_text} navbar-brand`} to="/">TravelBloom</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className={`${styles.homePage_component} collapse navbar-collapse`} id="navbarSupportedContent">
-          <ul className={`${styles.link_pages} navbar-nav mr-auto`}>
-            <li className={`${styles.link_pages_li} nav-item active`}>
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">Action</a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Contact Us</a>
-            </li>
-            <li className="nav-item">
-              {/* <button className="btn btn-outline-success my-2 my-sm-0" id="signin-button">Sign In</button> */}
-               <a className="nav-link" href="#" id="sign-in-link">Sign In</a>
-          </li>
-          </ul>
-          <form className={`${styles.searchBar} form-inline my-2 my-lg-0`}>
-            <input className="form-control mr-sm-2" type="search" id="search-input" placeholder="Enter a destination or key word here!" aria-label="Search"/>
-            <button className="btn btn-outline-success my-2 my-sm-0" id="search-button" type="submit">Search</button>
-            <button className="btn btn-outline-success my-2 my-sm-0" id="clear-button" type="submit">Clear</button>
-          </form>
-        </div>
+    <>
+      <Navbar expand="lg" className={`${styles.Navbar} bg-body-tertiary`}>
+      <Container fluid>
+        <Image src={logo_img} className={`${styles.logo_img}`} width='50px' height="50px" alt="logo_image"></Image>
+        <Navbar.Brand href="/" className={`${styles.title}`}>TravelBloom</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" className={`${styles.navToggle}`} />
+        <Navbar.Collapse id="navbarScroll" className={`${styles.navToggle}`}>
+          <Nav
+            className={`${styles.LinkItems} me-auto my-2 my-lg-0`}
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+              <Nav.Link href="/home" className={`${styles.NavLink}`}>Home</Nav.Link>
+              <Nav.Link href="/about" className={`${styles.NavLink}`}>About Us</Nav.Link>
+              <NavDropdown title="Features" id="navbarScrollingDropdown" className={`${styles.NavLink}`}>
+                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action5">
+                  Something else here
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="/contact" className={`${styles.NavLink}`}>
+                Contact Us
+              </Nav.Link>
+              <Nav.Link href="/signIn" className={`${styles.NavLink}`}>
+                Sign In
+              </Nav.Link>
+              {/* <Nav.Link href="#" className={`${styles.NavLink}`}>
+                Contact Us
+              </Nav.Link> */}
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              id='search-button'
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              // value={searchQuery}
+              // onChange={handleSearchChange}
+            />
+            <Button variant="outline-success" className={`${styles.btnSearchClear}`} style={{margin: '0px 10px 0px 0px'}} >Search</Button>
+            <Button variant="outline-danger" className={`${styles.btnSearchClear}`}>Claer</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
 
-        <Social_links />
-
-        
-      
-
-
-    </nav>
-    {/* <nav className={`{styles.navigation} navbar navbar-expand-lg navbar-light bg-light container`}>
-      <span className="img">
-        <img src="./images/travel_logo.jpeg" alt="travel_logo" width="50px" height="50px"/>
-      </span>
-        
-      
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="./home.html">Home <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="./about_us.html">About</a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">Action</a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="./contact_us.html">Contact Us</a>
-            </li>
-            <li className="nav-item">
-              {/* <button className="btn btn-outline-success my-2 my-sm-0" id="signin-button">Sign In</button> */}
-              {/* <a className="nav-link" href="./sign_in_form.html" id="sign-in-link">Sign In</a>
-          </li>
-          </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" id="search-input" placeholder="Enter a destination or key word here!" aria-label="Search"/>
-            <button className="btn btn-outline-success my-2 my-sm-0" id="search-button" type="submit">Search</button>
-            <button className="btn btn-outline-success my-2 my-sm-0" id="clear-button" type="submit">Clear</button>
-          </form>
-        </div>
-    </nav> */}
-
-    </div>
-  )
+    {/* <Social_links /> */} 
+    {/* not needed here */}
+  </>
+  );
 }
 
-export default Navigation
+export default Navigation2;
